@@ -1,21 +1,13 @@
 import time
-import random
 import torch
 import torch.nn as nn
 import numpy as np
-from torch.autograd import Variable
 from operators import Operators
 from rnn import DSRRNN_MULTI
 from expression_utils import *
-from collections import Counter
 import copy
-from utils import recursively_convert_to_namespace, namespace_to_dict
-from module import UpdateModule 
-# from GP_controller import GPController
-# from program import Program
 import time
 from sklearn.metrics import r2_score
-import pdb
 
 ###############################################################################
 # Main Training loop
@@ -27,7 +19,6 @@ def train(X_constants, y_constants, X_rnn, y_rnn, modules, operator_list, config
     epoch_best_expressions = []
     epoch_best_sequences = []
     start_time = time.time()
-
 
     kwargs = config.training
     # Initialize operators, RNN, and optimizer
