@@ -8,6 +8,8 @@ from module import UpdateModule
 import json
 from utils import recursively_convert_to_namespace, namespace_to_dict
 import copy
+import argparse
+import pdb
 
 np.random.seed(2025)
 
@@ -77,8 +79,10 @@ if __name__=='__main__':
         config_dict = json.load(f)
         config = recursively_convert_to_namespace(config_dict)
 
-    expr_name = config.dataset.expr_name
-
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--benchmark', type=str, default="nguyen1", help='benchmark name')
+    args = parser.parse_args()
+    expr_name = args.benchmark
     print("-----start training expr {}...".format(expr_name))
     dataset = config.dataset
     print("dataset.dataset_name:", dataset.dataset_name)
