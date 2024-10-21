@@ -40,5 +40,10 @@
         "module_number": 2,
         "max_length": 8,
         "max_arity": 4
+    },
+    "prior":{
+        "repeat":{
+            "max_": 4
+        }
     }
 }
