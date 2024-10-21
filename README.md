@@ -9,7 +9,11 @@ conda create -n CaMo python=3.8.19
 ```
 To activate this environment, use:
 ```
-conda activate CaMo or source activate CaMo
+conda activate CaMo
+```
+or,
+```
+source activate CaMo
 ```
 Then install the dependency package via:
 ```
