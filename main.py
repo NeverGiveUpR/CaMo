@@ -10,6 +10,7 @@ from utils import recursively_convert_to_namespace, namespace_to_dict
 import copy
 import argparse
 import pdb
+from utils import calculate_metric
 
 np.random.seed(2025)
 
@@ -119,9 +120,11 @@ if __name__=='__main__':
     best_modules = results['best_modules']
     best_modules_string = results['best_modules_string']
 
-    # print("*********************************************")
-    # print("best_expression:", best_expr)
-    # print("best_sequence:", best_sequence)
-    # print("best_modules_string:", best_modules_string)
-    # print("time_cost:", time_cost)
-    # print("*********************************************")
+    mse, rmse, r2, simplicity, complexity = calculate_metric(str(best_expr), X_test, y_test)
+    print("*********************************************")
+    print("The metric of the learned best expression {} are:".format(str(best_expr)))
+    print("mse:", mse)
+    print("rmse:", rmse)
+    print("r2:", r2)
+    print("complexity:", complexity)
+    print("*********************************************")
