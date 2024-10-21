@@ -3,15 +3,25 @@
 Pytorch implementation for the paper "CaMo: Capturing the Modularity by End-to-End Models for Symbolic Regression", submitted to the journal Knowledge-Based Systems, 2024.
 
 ## Installation
-Please install Python 3.8.19 and install the environment via:
+Create a new python environment by conda via:
+```
+conda create -n CaMo python=3.8.19
+```
+To activate this environment, use:
+```
+conda activate CaMo or source activate CaMo
+```
+Then install the dependency package via:
 ```
 pip install -r requirements.txt
 ```
 
 ## Training
-The config.json document contains all the hyperparameter settings.
-Below is an example of running CaMo with benchmark Nguyen1.
-First, modify the "expr_name" configuration as "nguyen1" (default setting), then run the command:
+Run the following command will conduct experiment on benchmark "nguyen2":
 ```
-python main.py
+python main.py --benchmark nguyen2
+```
+If you want to conduct experiments on other benchmarks, please modify the benchmark_name:
+```
+python main.py --benchmark benchmark_name
 ```
