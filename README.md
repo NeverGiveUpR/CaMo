@@ -27,6 +27,6 @@ python main.py --benchmark nguyen2
 ```
 If you want to conduct experiments on other benchmarks, please modify the *benchmark_name*:
 ```
-python main.py --benchmark *benchmark_name*
+python main.py --benchmark benchmark_name
 ```
 Conduct this command may take a few hours to run the procedure. In each iteration, the best expression will be reported along with its reward, used module. After training, the mse, rmse, r2, and complexity of the searched best expression will be displayed. Note that in the first iteration, no module is used, thus the reported module is empty. After few iterations, better expressions with modules will be reported.
